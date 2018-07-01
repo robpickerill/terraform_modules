@@ -4,7 +4,7 @@ resource "aws_s3_bucket" "terraform" {
   bucket = "${var.s3_bucket}"
 
   tags {
-    Name        = "${var.3_bucket_name}"
+    Name        = "${var.s3_bucket_name}"
     Environment = "${var.env}"
     Terraform   = "Created by Terraform"
   }
