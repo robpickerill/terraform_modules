@@ -19,9 +19,7 @@ resource "aws_dynamodb_table" "terraform" {
   read_capacity  	        = 2
   write_capacity 	        = 2
   hash_key       	        = "LockID"
-  server_side_encryption {
-    s_s_e_enabled = true
-  }
+  server_side_encryption  = True
 
   attribute {
     name = "LockID"
