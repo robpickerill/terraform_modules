@@ -3,17 +3,17 @@ variable "env" {
   type        = "string"
 }
 
-variable "s3_bucket" {
+variable "s3Bucket" {
   description = "S3 bucket for terraform state."
   type        = "string"
 }
 
-variable "s3_bucket_name" {
+variable "s3BucketName" {
   description = "'Name' tag for S3 bucket with terraform state."
   type        = "string"
 }
 
-variable "dynamodb_table" {
+variable "dynamodbTable" {
   description = "DynamoDB table name for terraform lock."
   type        = "string"
 }
