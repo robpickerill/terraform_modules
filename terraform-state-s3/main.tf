@@ -1,11 +1,11 @@
 # Terraform module for managing s3 bucket and dynamodb table for the state store
 
 resource "awsS3Bucket" "terraform" {
-  bucket = "${var.s3Bucket}"
+  bucket = "${s3Bucket}"
 
   tags {
-    Name        = "${var.s3BucketName}"
-    Environment = "${var.env}"
+    Name        = "${s3BucketName}"
+    Environment = "${env}"
     Terraform   = "Created by Terraform"
   }
 
@@ -15,7 +15,7 @@ resource "awsS3Bucket" "terraform" {
 }
 
 resource "awsDynamodbTable" "terraform" {
-  name           	 = "${var.dynamodbTable}"
+  name           	 = "${dynamodbTable}"
   read_capacity  	 = 5
   write_capacity 	 = 5
   hash_key       	 = "LockID"
