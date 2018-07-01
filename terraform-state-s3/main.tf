@@ -16,11 +16,12 @@ resource "aws_s3_bucket" "terraform" {
 
 resource "aws_dynamodb_table" "terraform" {
   name           	        = "${var.dynamodb_table}"
-  read_capacity  	        = 5
-  write_capacity 	        = 5
+  read_capacity  	        = 2
+  write_capacity 	        = 2
   hash_key       	        = "LockID"
-#   point_in_time_recover   = true
-#   server_side_encryption  = true
+  server_side_encryption {
+    s_s_enabled = true
+  }
 
   attribute {
     name = "LockID"
